@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "lighthouse.app", "lighthouse.app\lighthouse.app.pyproj", "{1A2B4C95-BD59-4CB2-BB42-8882EBC46404}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "test", "test\test.pyproj", "{52B8C8AE-7853-4000-9EA4-63F80B2872F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A2B4C95-BD59-4CB2-BB42-8882EBC46404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A2B4C95-BD59-4CB2-BB42-8882EBC46404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A2B4C95-BD59-4CB2-BB42-8882EBC46404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A2B4C95-BD59-4CB2-BB42-8882EBC46404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52B8C8AE-7853-4000-9EA4-63F80B2872F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52B8C8AE-7853-4000-9EA4-63F80B2872F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52B8C8AE-7853-4000-9EA4-63F80B2872F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52B8C8AE-7853-4000-9EA4-63F80B2872F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
