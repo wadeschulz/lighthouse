@@ -24,3 +24,14 @@ def annotate():
         title='Annotate',
         year=2015
     )
+
+@app.route('/analyze')
+def analyze():
+    """Enter VCF->MongoDB here"""
+
+
+    return render_template(
+        'analyze.jade',
+        title='Analyze',
+        year=2015
+    )

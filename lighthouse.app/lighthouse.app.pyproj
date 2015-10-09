@@ -43,6 +43,7 @@
     <Folder Include="lighthouse\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="lighthouse\templates\analyze.jade" />
     <Content Include="lighthouse\templates\annotate.jade" />
     <Content Include="requirements.txt" />
     <Content Include="lighthouse\static\content\bootstrap.css" />
