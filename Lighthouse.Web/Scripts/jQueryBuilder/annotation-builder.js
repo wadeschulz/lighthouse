@@ -1,14 +1,11 @@
-﻿var $b = $('#builder');
-
-var options = {
+﻿var options = {
     allow_empty: true,
 
-    default_filter: 'state',
+    default_filter: '',
 
     optgroups: {
         core: {
-            en: 'Core',
-            fr: 'Coeur'
+            en: 'Core'
         }
     },
 
@@ -24,85 +21,15 @@ var options = {
 
     filters: [
         /*
-* basic
-*/
+        * Gene Name
+        */
         {
-            id: 'name',
-            label: {
-                en: 'Name',
-                fr: 'Nom'
-            },
-            type: 'string',
-            optgroup: 'core',
-            default_value: 'Mistic',
-            size: 30,
-            unique: true
-        },
-        /*
-* textarea
-*/
-        {
-            id: 'bson',
-            label: 'BSON',
-            type: 'string',
-            input: 'textarea',
-            operators: ['equal'],
-            size: 30,
-            rows: 3
-        },
-        /*
-* checkbox
-*/
-        {
-            id: 'category',
-            label: 'Category',
-            type: 'integer',
-            input: 'checkbox',
-            optgroup: 'core',
-            values: {
-                1: 'Books',
-                2: 'Movies',
-                3: 'Music',
-                4: 'Tools',
-                5: 'Goodies',
-                6: 'Clothes'
-            },
-            colors: {
-                1: 'foo',
-                2: 'warning',
-                5: 'success'
-            },
-            operators: ['in', 'not_in', 'equal', 'not_equal', 'is_null', 'is_not_null']
-        },
-        /*
-* select
-*/
-        {
-            id: 'continent',
-            label: 'Continent',
+            id: 'gene',
+            label: 'Gene',
             type: 'string',
             input: 'select',
-            optgroup: 'core',
-            placeholder: 'Select something',
-            values: {
-                'eur': 'Europe',
-                'asia': 'Asia',
-                'oce': 'Oceania',
-                'afr': 'Africa',
-                'na': 'North America',
-                'sa': 'South America'
-            },
-            operators: ['equal', 'not_equal', 'is_null', 'is_not_null']
-        },
-        /*
-* Selectize
-*/
-        {
-            id: 'state',
-            label: 'State',
-            type: 'string',
-            input: 'select',
-            multiple: true,
+            multiple: false,
+            operators: ['equal', 'not_equal', 'is_null', 'is_not_null'],
             plugin: 'selectize',
             plugin_config: {
                 valueField: 'id',
@@ -110,151 +37,133 @@ var options = {
                 searchField: 'name',
                 sortField: 'name',
                 options: [
-                    { id: "AL", name: "Alabama" },
-                    { id: "AK", name: "Alaska" },
-                    { id: "AZ", name: "Arizona" },
-                    { id: "AR", name: "Arkansas" },
-                    { id: "CA", name: "California" },
-                    { id: "CO", name: "Colorado" },
-                    { id: "CT", name: "Connecticut" },
-                    { id: "DE", name: "Delaware" },
-                    { id: "DC", name: "District of Columbia" },
-                    { id: "FL", name: "Florida" },
-                    { id: "GA", name: "Georgia" },
-                    { id: "HI", name: "Hawaii" },
-                    { id: "ID", name: "Idaho" }
+                    { id: "ASXL1", name: "ASXL1" },
+                    { id: "CBL", name: "CBL" },
+                    { id: "CEBPA", name: "CEBPA" },
+                    { id: "CSF3R", name: "CSF3R" },
+                    { id: "DNMT3A", name: "DNMT3A" },
+                    { id: "ETV6", name: "ETV6" },
+                    { id: "EZH2", name: "EZH2" },
+                    { id: "FLT3", name: "FLT3" },
+                    { id: "HRAS", name: "HRAS" },
+                    { id: "IDH1", name: "IDH1" },
+                    { id: "IDH2", name: "IDH2" },
+                    { id: "JAK2", name: "JAK2" },
+                    { id: "KIT", name: "KIT" },
+                    { id: "KRAS", name: "KRAS" },
+                    { id: "MLL", name: "MLL" },
+                    { id: "MPL", name: "MPL" },
+                    { id: "NPM1", name: "NPM1" },
+                    { id: "NRAS", name: "NRAS" },
+                    { id: "PHF6", name: "PHF6" },
+                    { id: "RUNX1", name: "RUNX1" },
+                    { id: "SF3B1", name: "SF3B1" },
+                    { id: "SRSF2", name: "SRSF2" },
+                    { id: "TET2", name: "TET2" },
+                    { id: "TP53", name: "TP53" },
+                    { id: "WT1", name: "WT1" }
                 ]
             },
             valueSetter: function (rule, value) {
                 rule.$el.find('.rule-value-container select')[0].selectize.setValue(value);
             }
         },
-        /*
-* radio
-*/
         {
-            id: 'in_stock',
-            label: 'In stock',
-            type: 'integer',
-            input: 'radio',
-            optgroup: 'plugin',
-            values: {
-                1: 'Yes',
-                0: 'No'
-            },
-            operators: ['equal']
-        },
-        /*
-* double
-*/
-        {
-            id: 'price',
-            label: 'Price',
+            id: 'af',
+            label: 'Allelic Frequency',
             type: 'double',
-            size: 5,
+            size: 10,
             validation: {
                 min: 0,
-                step: 0.01
-            },
-            data: {
-                class: 'com.example.PriceTag'
-            }
-        },
-        /*
-* slider
-*/
-        {
-            id: 'rate',
-            label: 'Rate',
-            type: 'integer',
-            validation: {
-                min: 0,
+                step: 0.5,
                 max: 100
-            },
-            plugin: 'slider',
+            }
+        },
+        {
+            id: 'chr',
+            label: 'Chromosome',
+            operators: ['equal', 'not_equal', 'is_null', 'is_not_null'],
+            type: 'string',
+            size: 5
+        },
+        {
+            id: 'loc',
+            label: 'Genomic Location',
+            type: 'integer',
+            size: 10
+        },
+        {
+            id: 'region',
+            label: 'Genomic Region',
+            type: 'string',
+            input: 'select',
+            multiple: false,
+            operators: ['equal', 'not_equal', 'is_null', 'is_not_null'],
+            plugin: 'selectize',
             plugin_config: {
-                min: 0,
-                max: 100,
-                value: 0
-            },
-            onAfterSetValue: function (rule, value) {
-                var input = rule.$el.find('.rule-value-container input');
-                input.slider('setValue', value);
-                input.val(value); // don't know why I need it
-            }
-        },
-        /*
-* placeholder and regex validation
-*/
-        {
-            id: 'id',
-            label: 'Identifier',
-            type: 'string',
-            optgroup: 'plugin',
-            placeholder: '____-____-____',
-            size: 14,
-            operators: ['equal', 'not_equal'],
-            validation: {
-                format: /^.{4}-.{4}-.{4}$/
-            }
-        },
-        /*
-* custom input
-*/
-        {
-            id: 'coord',
-            label: 'Coordinates',
-            type: 'string',
-            default_value: 'C.5',
-            description: 'The letter is the cadran identifier:\
-<ul>\
-  <li><b>A</b>: alpha</li>\
-  <li><b>B</b>: beta</li>\
-  <li><b>C</b>: gamma</li>\
-</ul>',
-            validation: {
-                format: /^[A-C]{1}.[1-6]{1}$/
-            },
-            input: function (rule) {
-                var $container = rule.$el.find('.rule-value-container');
-
-                $container.on('change', '[name=coord_1]', function () {
-                    var h = '';
-
-                    switch ($(this).val()) {
-                        case 'A':
-                            h = '<option value="-1">-</option> <option value="1">1</option> <option value="2">2</option>';
-                            break;
-                        case 'B':
-                            h = '<option value="-1">-</option> <option value="3">3</option> <option value="4">4</option>';
-                            break;
-                        case 'C':
-                            h = '<option value="-1">-</option> <option value="5">5</option> <option value="6">6</option>';
-                            break;
-                    }
-
-                    $container.find('[name=coord_2]').html(h).toggle(h != '');
-                });
-
-                return '\
-      <select name="coord_1" class="form-control"> \
-        <option value="-1">-</option> \
-        <option value="A">A</option> \
-        <option value="B">B</option> \
-        <option value="C">C</option> \
-      </select> \
-      <select name="coord_2" class="form-control" style="display:none;"></select>';
-            },
-            valueParser: function (rule, value) {
-                return rule.$el.find('[name=coord_1]').val()
-                    + '.' + rule.$el.find('[name=coord_2]').val();
+                valueField: 'id',
+                labelField: 'name',
+                searchField: 'name',
+                sortField: 'name',
+                options: [
+                    { id: "intronic", name: "Intronic" },
+                    { id: "exonic", name: "Exonic" },
+                    { id: "splicesite", name: "Splicesite" },
+                    { id: "utr_5", name: "5' UTR" },
+                    { id: "utr_3", name: "3' UTR" },
+                    { id: "upstream", name: "Upstream" },
+                    { id: "downstream", name: "Downstream" }
+                ]
             },
             valueSetter: function (rule, value) {
-                if (rule.operator.nb_inputs !== 0) {
-                    var val = value.split('.');
-                    rule.$el.find('[name=coord_1]').val(val[0]).trigger('change');
-                    rule.$el.find('[name=coord_2]').val(val[1]);
-                }
+                rule.$el.find('.rule-value-container select')[0].selectize.setValue(value);
+            }
+        },
+        {
+            id: 'vartype',
+            label: 'Variant Type',
+            type: 'string',
+            input: 'select',
+            multiple: false,
+            operators: ['equal', 'not_equal', 'is_null', 'is_not_null'],
+            plugin: 'selectize',
+            plugin_config: {
+                valueField: 'id',
+                labelField: 'name',
+                searchField: 'name',
+                sortField: 'name',
+                options: [
+                    { id: "snv", name: "Single Nucleotide Variant (SNV/SNP)" },
+                    { id: "indel", name: "Insertion/Deletion (INDEL)" },
+                    { id: "mnv", name: "Multiple Nucleotide Variant (MNV)" }
+                ]
+            },
+            valueSetter: function (rule, value) {
+                rule.$el.find('.rule-value-container select')[0].selectize.setValue(value);
+            }
+        },
+        {
+            id: 'vareffect',
+            label: 'Variant Effect',
+            type: 'string',
+            input: 'select',
+            multiple: false,
+            operators: ['equal', 'not_equal', 'is_null', 'is_not_null'],
+            plugin: 'selectize',
+            plugin_config: {
+                valueField: 'id',
+                labelField: 'name',
+                searchField: 'name',
+                sortField: 'name',
+                options: [
+                    { id: "synonymous", name: "Synonymous" },
+                    { id: "missense", name: "Missense" },
+                    { id: "frameshiftInsertion", name: "Frameshift Insertion" },
+                    { id: "frameshiftDeletion", name: "Frameshift Deletion" }
+                ]
+            },
+            valueSetter: function (rule, value) {
+                rule.$el.find('.rule-value-container select')[0].selectize.setValue(value);
             }
         }
     ]
@@ -268,71 +177,6 @@ $('#builder').on('afterCreateRuleInput.queryBuilder', function (e, rule) {
         rule.$el.find('.rule-value-container').css('min-width', '200px')
             .find('.selectize-control').removeClass('form-control');
     }
-});
-
-// change language
-$('[name=language]').selectpicker().on('change', function () {
-    var lang = $(this).val();
-
-    var done = function () {
-        var rules = $b.queryBuilder('getRules');
-        if (!$.isEmptyObject(rules)) {
-            options.rules = rules;
-        }
-        options.lang_code = lang;
-        $b.queryBuilder('destroy');
-        $('#builder').queryBuilder(options);
-    };
-
-    if ($.fn.queryBuilder.regional[lang] === undefined) {
-        $.getScript('../dist/i18n/query-builder.' + lang + '.js', done);
-    } else {
-        done();
-    }
-});
-
-// change theme
-$('.change-theme').on('click', function () {
-    $('#qb-theme').replaceWith('<link rel="stylesheet" href="' + $(this).data('qb') + '" id="qb-theme">');
-    $('#bt-theme').replaceWith('<link rel="stylesheet" href="' + $(this).data('bt') + '" id="bt-theme">');
-});
-
-// set rules
-$('.set').on('click', function () {
-    $('#builder').queryBuilder('setRules', {
-        condition: 'AND',
-        rules: [
-            {
-                id: 'price',
-                operator: 'between',
-                value: [10.25, 15.52],
-                flags: {
-                    no_delete: true,
-                    filter_readonly: true
-                },
-                data: {
-                    unit: '€'
-                }
-            }, {
-                id: 'state',
-                operator: 'equal',
-                value: 'AK',
-            }, {
-                condition: 'OR',
-                rules: [
-                    {
-                        id: 'category',
-                        operator: 'equal',
-                        value: 2
-                    }, {
-                        id: 'coord',
-                        operator: 'equal',
-                        value: 'B.3'
-                    }
-                ]
-            }
-        ]
-    });
 });
 
 // set rules from MongoDB
@@ -392,27 +236,4 @@ $('.parse-mongo').on('click', function () {
             $('#builder').queryBuilder('getMongo'),
             undefined, 2
         ));
-});
-
-// set filters
-$('.set-filters').on('click', function () {
-    $(this).prop('disabled', true);
-
-    // add a new filter after 'state'
-    $('#builder').queryBuilder('addFilter',
-        {
-            id: 'new_one',
-            label: 'New filter',
-            type: 'string'
-        },
-        'state'
-    );
-
-    // remove filter 'coord'
-    $('#builder').queryBuilder('removeFilter',
-        'coord',
-        true
-    );
-
-    // also available : 'setFilters'
 });
