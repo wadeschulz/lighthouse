@@ -1,0 +1,1361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A4BF1ADB-B422-4BD8-BA60-8DA2E7CABCC3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lighthouse.Web</RootNamespace>
+    <AssemblyName>Lighthouse.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jQueryBuilder\annotation-builder.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\awesome-bootstrap-checkbox\demo\bootstrap.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\awesome-bootstrap-checkbox\demo\build.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\awesome-bootstrap-checkbox\demo\build.less.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\awesome-bootstrap-checkbox\demo\index.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\.gitignore" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\dist\.gitattributes" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\dist\jasmine\blanket_jasmine.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\dist\jasmine\blanket_jasmine.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\dist\mocha\blanket_mocha.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\dist\mocha\blanket_mocha.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\dist\qunit\.gitattributes" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\dist\qunit\blanket.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\dist\qunit\blanket.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\Gruntfile.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\src\adapters\jasmine-2.x-blanket.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\src\adapters\jasmine-blanket.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\src\adapters\mocha-blanket.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\src\adapters\usage-blanket.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\src\adapters\yui-blanket.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\src\blanket.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\src\blanketRequire.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\src\blanket_browser.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\src\config.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\src\index.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\src\loaders\blanket_cs.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\src\node-loaders\coffee-script.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\src\qunit\noautorun.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\src\qunit\qunit.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\src\qunit\reporter.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\src\reporters\lcov_reporter.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\src\reporters\simple_json_reporter.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\tasks\blanketTests.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\testserver.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\css\todos.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\es5-sham.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\es5-shim.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\filter_function.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\images\destroy.png" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\index.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\js\ext\backbone.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\js\ext\backbone.localStorage.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\js\ext\jquery.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\js\ext\sinon-1.3.1.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\js\ext\sinon-qunit-1.0.0.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\js\ext\template.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\js\ext\underscore.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\js\koans\aboutApps.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\js\koans\aboutCollections.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\js\koans\aboutEvents.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\js\koans\aboutModels.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\js\koans\aboutViews.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\js\todos.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\templates\app.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\templates\item.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\backbone-koans\templates\stats.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\bootstrap-affix.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\bootstrap-alert.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\bootstrap-button.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\bootstrap-carousel.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\bootstrap-collapse.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\bootstrap-dropdown.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\bootstrap-modal.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\bootstrap-popover.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\bootstrap-scrollspy.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\bootstrap-tab.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\bootstrap-tooltip.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\bootstrap-transition.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\bootstrap-typeahead.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\index.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\index_with_worker.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\phantom.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\server.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\unit\bootstrap-affix.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\unit\bootstrap-alert.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\unit\bootstrap-button.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\unit\bootstrap-carousel.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\unit\bootstrap-collapse.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\unit\bootstrap-dropdown.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\unit\bootstrap-modal.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\unit\bootstrap-phantom.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\unit\bootstrap-popover.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\unit\bootstrap-scrollspy.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\unit\bootstrap-tab.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\unit\bootstrap-tooltip.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\unit\bootstrap-transition.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\unit\bootstrap-typeahead.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\vendor\jquery.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\vendor\qunit.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\tests\vendor\qunit.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\branchTracking\branch_runner.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\branchTracking\branch_sample.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\branchTracking\branch_test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\coffee_script\index.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\coffee_script\test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\commonjs\commonjs_bundle.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\commonjs\runner.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\commonjs\source_testing_url_module.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\commonjs\source_to_cover.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\commonjs\testlib.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\commonjs\testlib_test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\custom-reporter\index.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\custom-reporter\lcov.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\custom-reporter\lcov_test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\custom-reporter\sample.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\custom-reporter\test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\helpers\console_runner.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\helpers\phantom_jasmine_runner.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\helpers\phantom_mocha_runner.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\helpers\phantom_qunit_old_runner.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\helpers\phantom_qunit_runner.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\ignore_script_error\runner.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\ignore_script_error\script_error.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\ignore_script_error\script_error_test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine-custom-build\require.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine-custom-build\source\Player.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine-custom-build\source\Song.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine-custom-build\SpecRunner.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine-custom-build\SpecRunner_data_adapter.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine-custom-build\spec\PlayerSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine-custom-build\spec\require_PlayerSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine-custom-build\spec\require_SongSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine-custom-build\spec\SongSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine-custom-build\spec\SpecHelper.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine-requirejs\code\all.tests.jasmine.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine-requirejs\code\base\core.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine-requirejs\code\tests\base\base.jasmine.test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine-requirejs\code\tests\ui\ui.jasmine.test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine-requirejs\code\ui\screen.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine-requirejs\runner.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine\source\Player.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine\source\Song.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine\SpecRunner.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine\SpecRunner_data_adapter.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine\SpecRunner_data_adapter_array.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine\SpecRunner_data_adapter_regex.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine\spec\PlayerSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine\spec\SongSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jasmine\spec\SpecHelper.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\css\todos.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\images\destroy.png" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\index.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\js\ext\backbone.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\js\ext\backbone.localStorage.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\js\ext\jquery.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\js\ext\sinon-1.3.1.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\js\ext\sinon-qunit-1.0.0.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\js\ext\template.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\js\ext\underscore.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\js\koans\aboutApps.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\js\koans\aboutCollections.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\js\koans\aboutEvents.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\js\koans\aboutModels.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\js\koans\aboutViews.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\js\todos.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\templates\app.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\templates\item.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\jquery-usage\templates\stats.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\lib-tests\blanket_test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\lib-tests\runner.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\mocha-browser\adapter.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\mocha-browser\adapter.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\mocha-browser\array.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\mocha-browser\duration.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\mocha-browser\globals.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\mocha-browser\index.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\mocha-browser\large.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\mocha-browser\large.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\mocha-browser\opts.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\mocha-browser\opts.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\mocha-browser\src\aSource.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\mocha-browser\timeout.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\performance\blanket_performance_test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\performance\performance_runner.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\qunit-start-stop\runner.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\qunit-start-stop\stop_start_test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\qunit-start-stop\test_script.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\requirejs\chutzpah.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\requirejs\code\all.tests.qunit.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\requirejs\code\base\core.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\requirejs\code\tests\base\base.qunit.test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\requirejs\code\tests\ui\ui.qunit.test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\requirejs\code\ui\screen.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\requirejs\require_runner.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\requirejs\require_sample.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\requirejs\require_test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\blockinjection_test_file.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\blockinjection_test_file_instrumented.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\branch_complex_test_file.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\branch_complex_test_file_instrumented.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\branch_test_file.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\branch_test_file_instrumented.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\comment_test_file.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\comment_test_file_instrumented.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\core_fixtures.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\multi_line_branch_test_file.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\multi_line_branch_test_file_instrumented.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\shebang_test_file.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\shebang_test_file_instrumented.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\simple_test_file.js.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\simple_test_file_instrumented.js.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\simple_test_file_instrumented_full.js.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\src\sourceA.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\src\sourceB.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\src\sourceC.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\test\testA.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\testrunner.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\testrunner_cs.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\tests\blanket_core.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\tests\instrumentation_test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\tests\nested_test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\usage\backbone.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\usage\backbone.localStorage.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\usage\index.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\usage\testpage.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\usage\test_fcn.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\usage\todos.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\usage\todos.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\usage\underscore.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\vendor\coffee-script.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\vendor\cs.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\vendor\jasmine-html.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\vendor\jasmine.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\vendor\jasmine.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\vendor\jquery.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\vendor\mocha.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\vendor\mocha.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\vendor\qunit.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\vendor\qunit.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\vendor\qunit_old.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\vendor\qunit_old.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\yui\runner.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\yui\test_module_yui.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\yui\test_module_yui_test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootbox\.gitignore" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootbox\bootbox.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\css\bootstrap-select.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\css\bootstrap-select.min.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\bootstrap-select.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\bootstrap-select.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-bg_BG.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-bg_BG.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-cs_CZ.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-cs_CZ.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-da_DK.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-da_DK.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-de_DE.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-de_DE.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-en_US.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-en_US.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-es_CL.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-es_CL.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-eu.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-eu.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-fa_IR.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-fa_IR.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-fr_FR.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-fr_FR.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-hu_HU.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-hu_HU.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-it_IT.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-it_IT.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-ko_KR.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-ko_KR.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-nl_NL.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-nl_NL.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-pl_PL.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-pl_PL.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-pt_BR.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-pt_BR.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-pt_PT.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-pt_PT.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-ro_RO.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-ro_RO.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-ru_RU.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-ru_RU.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-sk_SK.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-sk_SK.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-sl_SI.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-sl_SI.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-sv_SE.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-sv_SE.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-tr_TR.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-tr_TR.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-ua_UA.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-ua_UA.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-zh_CN.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-zh_CN.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-zh_TW.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\i18n\defaults-zh_TW.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\bootstrap-select.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-bg_BG.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-cs_CZ.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-da_DK.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-de_DE.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-en_US.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-es_CL.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-eu.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-fa_IR.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-fr_FR.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-hu_HU.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-it_IT.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-ko_KR.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-nl_NL.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-pl_PL.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-pt_BR.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-pt_PT.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-ro_RO.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-ru_RU.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-sk_SK.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-sl_SI.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-sv_SE.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-tr_TR.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-ua_UA.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-zh_CN.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\i18n\defaults-zh_TW.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\dist\js\npm.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\Gruntfile.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\js\affix.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\js\alert.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\js\button.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\js\carousel.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\js\collapse.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\js\dropdown.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\js\modal.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\js\popover.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\js\scrollspy.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\js\tab.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\js\tooltip.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\js\transition.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\package.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootswatch-dist\css\bootstrap.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootswatch-dist\css\bootstrap.min.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootswatch-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootswatch-dist\js\bootstrap.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootswatch-dist\js\bootstrap.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\benchmarks\compileBench.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\benchmarks\genspeed.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\benchmarks\index.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\benchmarks\jslitmus.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\benchmarks\templatesBench.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\benchmarks\templating\doT.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\benchmarks\templating\doU.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\doT.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\doT.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\doU.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\examples\advancedsnippet.txt" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\examples\browsersample.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\examples\customdoT.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\examples\express\index.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\examples\express\lib\app.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\examples\express\lib\render\index.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\examples\snippet.txt" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\examples\withdoT.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\index.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\LICENSE-DOT.txt" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\test\testdoT.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery-extendext\.gitignore" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery-extendext\Gruntfile.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery-extendext\jQuery.extendext.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery-extendext\jQuery.extendext.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery-extendext\tests\deepmerge-tests.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery-extendext\tests\index.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery-extendext\tests\jquery-core-tests.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery-extendext\tests\tests.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\dist\jquery.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\dist\jquery.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\ajax.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\ajax\jsonp.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\ajax\load.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\ajax\parseJSON.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\ajax\parseXML.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\ajax\script.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\ajax\var\nonce.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\ajax\var\rquery.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\ajax\xhr.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\attributes.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\attributes\attr.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\attributes\classes.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\attributes\prop.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\attributes\support.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\attributes\val.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\callbacks.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\core.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\core\access.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\core\init.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\core\parseHTML.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\core\ready.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\css.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\css\addGetHookIf.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\css\curCSS.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\css\defaultDisplay.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\css\support.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\css\swap.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\css\var\cssExpand.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\css\var\getStyles.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\css\var\isHidden.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\css\var\rmargin.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\data.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\data\accepts.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\data\Data.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\data\var\data_priv.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\data\var\data_user.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\deferred.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\deprecated.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\dimensions.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\effects.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\effects\animatedSelector.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\effects\Tween.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\event.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\event\ajax.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\event\alias.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\event\support.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\exports\amd.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\exports\global.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\intro.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\jquery.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\manipulation.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\manipulation\support.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\offset.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\outro.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\queue.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\queue\delay.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\selector-native.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\selector-sizzle.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\selector.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\serialize.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\sizzle\dist\sizzle.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\sizzle\dist\sizzle.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\traversing.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\traversing\findFilter.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\var\arr.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\var\class2type.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\var\concat.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\var\hasOwn.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\var\indexOf.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\var\pnum.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\var\push.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\var\rnotwhite.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\var\slice.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\var\strundefined.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\var\support.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\var\toString.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\wrap.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\microplugin\.gitignore" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\microplugin\src\microplugin.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\af.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\ar-ma.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\ar-sa.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\ar-tn.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\ar.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\az.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\be.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\bg.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\bn.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\bo.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\br.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\bs.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\ca.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\cs.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\cv.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\cy.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\da.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\de-at.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\de.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\el.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\en-au.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\en-ca.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\en-gb.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\eo.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\es.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\et.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\eu.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\fa.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\fi.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\fo.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\fr-ca.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\fr.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\fy.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\gl.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\he.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\hi.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\hr.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\hu.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\hy-am.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\id.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\is.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\it.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\ja.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\jv.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\ka.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\km.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\ko.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\lb.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\lt.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\lv.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\me.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\mk.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\ml.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\mr.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\ms-my.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\ms.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\my.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\nb.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\ne.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\nl.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\nn.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\pl.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\pt-br.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\pt.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\ro.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\ru.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\si.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\sk.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\sl.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\sq.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\sr-cyrl.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\sr.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\sv.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\ta.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\th.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\tl-ph.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\tr.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\tzl.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\tzm-latn.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\tzm.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\uk.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\uz.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\vi.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\zh-cn.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\locale\zh-tw.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\min\locales.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\min\locales.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\min\moment-with-locales.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\min\moment-with-locales.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\min\moment.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\min\tests.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\moment.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\create\check-overflow.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\create\date-from-array.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\create\from-anything.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\create\from-array.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\create\from-object.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\create\from-string-and-array.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\create\from-string-and-format.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\create\from-string.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\create\local.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\create\parsing-flags.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\create\utc.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\create\valid.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\duration\abs.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\duration\add-subtract.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\duration\as.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\duration\bubble.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\duration\constructor.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\duration\create.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\duration\duration.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\duration\get.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\duration\humanize.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\duration\iso-string.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\duration\prototype.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\format\format.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\locale\calendar.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\locale\constructor.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\locale\en.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\locale\formats.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\locale\invalid.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\locale\lists.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\locale\locale.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\locale\locales.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\locale\ordinal.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\locale\pre-post-format.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\locale\prototype.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\locale\relative.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\locale\set.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\moment\add-subtract.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\moment\calendar.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\moment\clone.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\moment\compare.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\moment\constructor.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\moment\diff.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\moment\format.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\moment\from.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\moment\get-set.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\moment\locale.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\moment\min-max.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\moment\moment.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\moment\prototype.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\moment\start-end-of.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\moment\to-type.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\moment\to.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\moment\valid.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\parse\regex.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\parse\token.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\aliases.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\constants.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\day-of-month.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\day-of-week.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\day-of-year.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\hour.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\millisecond.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\minute.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\month.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\offset.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\quarter.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\second.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\timestamp.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\timezone.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\units.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\week-year.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\week.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\units\year.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\utils\abs-ceil.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\utils\abs-floor.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\utils\compare-arrays.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\utils\defaults.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\utils\deprecate.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\utils\extend.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\utils\has-own-prop.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\utils\hooks.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\utils\is-array.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\utils\is-date.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\utils\map.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\utils\to-int.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\lib\utils\zero-fill.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\af.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\ar-ma.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\ar-sa.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\ar-tn.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\ar.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\az.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\be.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\bg.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\bn.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\bo.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\br.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\bs.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\ca.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\cs.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\cv.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\cy.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\da.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\de-at.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\de.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\el.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\en-au.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\en-ca.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\en-gb.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\eo.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\es.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\et.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\eu.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\fa.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\fi.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\fo.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\fr-ca.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\fr.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\fy.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\gl.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\he.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\hi.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\hr.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\hu.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\hy-am.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\id.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\is.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\it.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\ja.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\jv.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\ka.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\km.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\ko.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\lb.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\lt.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\lv.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\me.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\mk.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\ml.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\mr.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\ms-my.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\ms.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\my.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\nb.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\ne.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\nl.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\nn.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\pl.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\pt-br.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\pt.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\ro.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\ru.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\si.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\sk.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\sl.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\sq.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\sr-cyrl.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\sr.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\sv.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\ta.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\th.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\tl-ph.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\tr.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\tzl.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\tzm-latn.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\tzm.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\uk.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\uz.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\vi.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\zh-cn.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\locale\zh-tw.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\src\moment.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\templates\amd-named.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\templates\amd.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\templates\globals.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\templates\locale-header.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\templates\test-header.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\AUTHORS.txt" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\build\release.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\LICENSE.txt" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\qunit\qunit.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\qunit\qunit.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\reporter\html.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\src\assert.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\src\core.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\src\core\config.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\src\core\initialize.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\src\core\logging.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\src\core\onerror.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\src\core\stacktrace.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\src\core\utilities.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\src\diff.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\src\dump.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\src\equiv.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\src\export.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\src\intro.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\src\outro.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\src\qunit.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\src\test.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\css\bootstrap-slider.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\dependencies\css\bootstrap.min.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\dependencies\js\jquery.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\dependencies\js\modernizr.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\dist\bootstrap-slider.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\dist\css\bootstrap-slider.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\dist\css\bootstrap-slider.min.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\Gruntfile.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\index.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\js\bootstrap-slider.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\test\phantom_bind_polyfill.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\test\specs\ConflictingOptionsSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\test\specs\DraggingHandlesSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\test\specs\ElementDataAttributesSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\test\specs\EventsSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\test\specs\FocusOptionSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\test\specs\KeyboardSupportSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\test\specs\LogarithmicScaleSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\test\specs\LowAndHighTrackSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\test\specs\NamespaceSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\test\specs\offMethodSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\test\specs\OrientationSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\test\specs\PublicMethodsSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\test\specs\RefreshMethodSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\test\specs\TickMarksSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\test\specs\TooltipPositionOptionSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\test\specs\TooltipSplitOptionSpec.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\.gitignore" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\css\selectize.bootstrap2.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\css\selectize.bootstrap3.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\css\selectize.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\css\selectize.default.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\css\selectize.legacy.css" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\js\selectize.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\js\selectize.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\js\standalone\selectize.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\js\standalone\selectize.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\karma.conf.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sifter\.gitignore" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sifter\sifter.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sifter\sifter.min.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sql-parser\browser\example.html" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sql-parser\browser\sql-parser.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sql-parser\index.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sql-parser\lib\browser.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sql-parser\lib\compiled_parser.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sql-parser\lib\grammar.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sql-parser\lib\lexer.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sql-parser\lib\nodes.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sql-parser\lib\parser.js" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sql-parser\lib\sql_parser.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\css\flags.css" />
+    <Content Include="Scripts\jQueryBuilder\dist\css\query-builder.dark.css" />
+    <Content Include="Scripts\jQueryBuilder\dist\css\query-builder.dark.min.css" />
+    <Content Include="Scripts\jQueryBuilder\dist\css\query-builder.default.css" />
+    <Content Include="Scripts\jQueryBuilder\dist\css\query-builder.default.min.css" />
+    <Content Include="Scripts\jQueryBuilder\dist\i18n\query-builder.da.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\i18n\query-builder.de.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\i18n\query-builder.en.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\i18n\query-builder.es.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\i18n\query-builder.fa-ir.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\i18n\query-builder.fr.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\i18n\query-builder.it.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\i18n\query-builder.nl.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\i18n\query-builder.no.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\i18n\query-builder.pl.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\i18n\query-builder.pt-BR.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\i18n\query-builder.pt-PT.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\i18n\query-builder.ro.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\i18n\query-builder.ru.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\i18n\query-builder.sq.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\js\query-builder.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\js\query-builder.min.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\js\query-builder.standalone.js" />
+    <Content Include="Scripts\jQueryBuilder\dist\js\query-builder.standalone.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\awesome-bootstrap-checkbox\.bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.scss" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\awesome-bootstrap-checkbox\bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\awesome-bootstrap-checkbox\demo\bootstrap.scss" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\awesome-bootstrap-checkbox\demo\build.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\awesome-bootstrap-checkbox\demo\build.scss" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\awesome-bootstrap-checkbox\LICENSE" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\awesome-bootstrap-checkbox\README.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\.bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\.npmignore" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\.travis.yml" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\CNAME" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\component.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\CONTRIBUTING.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\docs\advanced_browser.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\docs\compatibility_and_features.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\docs\getting_started_browser.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\docs\getting_started_node.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\docs\intermediate_browser.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\docs\intermediate_node.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\docs\intermediate_node_2.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\docs\options.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\docs\special_features.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\HISTORY.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\LICENSE-MIT" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\package.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\README.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\bootstrap\.jshintrc" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\coffee_script\sample.coffee" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\fixture\src\sample.coffee" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\test-node\tests\coffee-script\test.coffee" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\blanket\test\testconfigs.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootbox\.bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootbox\.jshintrc" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootbox\.npmignore" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootbox\.travis.yml" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootbox\bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootbox\CONTRIBUTING.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootbox\LICENSE.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootbox\package.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootbox\README.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\.bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\css\bootstrap-select.css.map" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\dist\js\bootstrap-select.js.map" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\js\.jshintrc" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\less\bootstrap-select.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\less\variables.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap-select\LICENSE" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\.bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\grunt\.jshintrc" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\grunt\configBridge.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\js\.jscsrc" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\js\.jshintrc" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\.csscomb.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\.csslintrc" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\alerts.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\badges.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\bootstrap.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\breadcrumbs.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\button-groups.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\buttons.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\carousel.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\close.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\code.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\component-animations.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\dropdowns.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\forms.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\glyphicons.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\grid.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\input-groups.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\jumbotron.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\labels.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\list-group.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\media.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\alerts.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\buttons.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\center-block.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\forms.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\gradients.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\grid.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\image.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\labels.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\list-group.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\opacity.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\pagination.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\panels.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\resize.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\size.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\table-row.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\modals.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\navbar.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\navs.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\normalize.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\pager.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\pagination.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\panels.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\popovers.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\print.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\progress-bars.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\responsive-embed.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\responsive-utilities.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\scaffolding.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\tables.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\theme.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\thumbnails.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\tooltip.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\type.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\utilities.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\variables.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\less\wells.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\LICENSE" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\package.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootstrap\README.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootswatch-dist\.bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootswatch-dist\bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootswatch-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootswatch-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootswatch-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\bootswatch-dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\.bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\bin\dot-packer" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\examples\express\package.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\examples\express\templates\dashboard.jst" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\examples\express\templates\login.jst" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\examples\views\multidef.def.jst" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\examples\views\one.def" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\examples\views\two.dot.jst" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\package.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\doT\README.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery-extendext\.bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery-extendext\.travis.yml" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery-extendext\bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery-extendext\LICENSE" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery-extendext\package.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery-extendext\README.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\.bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\dist\jquery.min.map" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\jquery\src\sizzle\dist\sizzle.min.map" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\microplugin\.bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\microplugin\.npmignore" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\microplugin\bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\microplugin\package.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\microplugin\README.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\.bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\CHANGELOG.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\LICENSE" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\moment\README.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\.bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\browserstack-all.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\browserstack.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\CONTRIBUTING.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\History.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\qunit\README.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\.bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\composer.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\CONTRIBUTING.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\less\bootstrap-slider.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\less\rules.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\less\variables.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\LICENSE.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\package.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\README.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\sass\slider.scss" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\scripts\postpublish.sh" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\tpl\index.tpl" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\seiyria-bootstrap-slider\tpl\SpecRunner.tpl" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\.bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\less\plugins\drag_drop.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\less\plugins\dropdown_header.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\less\plugins\optgroup_columns.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\less\plugins\remove_button.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\less\selectize.bootstrap2.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\less\selectize.bootstrap3.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\less\selectize.default.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\less\selectize.legacy.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\dist\less\selectize.less" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\LICENSE" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\selectize\README.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sifter\.bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sifter\.npmignore" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sifter\bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sifter\package.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sifter\README.md" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sql-parser\.bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sql-parser\bower.json" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sql-parser\LICENSE" />
+    <Content Include="Scripts\jQueryBuilder\bower_components\sql-parser\README.md" />
+    <Content Include="Scripts\jQueryBuilder\dist\scss\dark.scss" />
+    <Content Include="Scripts\jQueryBuilder\dist\scss\default.scss" />
+    <Content Include="Scripts\jQueryBuilder\dist\scss\plugins\bt-tooltip-errors.scss" />
+    <Content Include="Scripts\jQueryBuilder\dist\scss\plugins\filter-description.scss" />
+    <Content Include="Scripts\jQueryBuilder\dist\scss\plugins\invert.scss" />
+    <Content Include="Scripts\jQueryBuilder\dist\scss\plugins\sortable.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62177</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62177/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
