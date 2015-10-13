@@ -7,6 +7,8 @@ namespace Lighthouse.Storage.Models
     {
         [Column("id")]
         public long Id { get; set; }
+        public string CaseId { get; set; }
+
         [Column("caseguid")]
         [MaxLength(255)]
         public string CaseGuid { get; set; }

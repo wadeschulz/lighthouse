@@ -9,7 +9,6 @@ namespace Lighthouse.Storage
     {
         public DbSet<Variant> Variants { get; set; }
         public DbSet<AnnotationRule> AnnotationRules { get; set; }
-        public DbSet<AnnotationRuleVersion> AnnotationRuleVersions { get; set; }
     }
 
     public class LighthouseInitializer : CreateDatabaseIfNotExists<LighthouseContext>
@@ -23,9 +22,12 @@ namespace Lighthouse.Storage
                 context.Database.ExecuteSqlCommand(string.Format("CREATE NONCLUSTERED INDEX IX_{0} ON {1} ([{0}] ASC)",
                     column, "Variants"));
             }
+            
+            context.Database.ExecuteSqlCommand(string.Format("CREATE NONCLUSTERED INDEX IX_{0} ON {1} ([{0}] ASC)",
+                    "Panel", "AnnotationRules"));
 
-            context.Database.ExecuteSqlCommand(string.Format("CREATE NONCLUSTERED INDEX IX_{0} ON {1} ([{0}] DESC)",
-                    "CreatedUtc", "AnnotationRuleVersions"));
+            context.Database.ExecuteSqlCommand(
+                "CREATE NONCLUSTERED INDEX IX_PANEL_STATUS ON AnnotationRules ([Panel] ASC, [IsValidated] ASC, [IsArchived] ASC)");
         }
     }
 }
