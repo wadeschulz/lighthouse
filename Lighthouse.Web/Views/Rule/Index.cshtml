@@ -1,0 +1,51 @@
+﻿@model List<Lighthouse.Storage.Models.AnnotationRule>
+
+@{
+    ViewBag.Title = "Rules";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-md-12 col-lg-10">
+        @Html.ActionLink("Create New Rule", "Create")
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12 col-lg-10">
+        <table style="width: 100%;">
+            <thead>
+            <tr>
+                <th>Rule Name</th>
+                <th>Panel</th>
+                <th>Snippet</th>
+                <th>Is Validated?</th>
+                <th>Is Archived?</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Panel</td>
+                    <td>
+                        @if (item.Query.Length > 15)
+                        {
+                            @item.Query.Substring(0, 15)
+                        }
+                        else
+                        {
+                            @item.Query
+                        }
+                    </td>
+                    <td>@item.IsValidated</td>
+                    <td>@item.IsArchived</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

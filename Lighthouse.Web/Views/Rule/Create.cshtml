@@ -1,7 +1,7 @@
-﻿@model Lighthouse.Web.Models.CreateAnnotation
+﻿@model Lighthouse.Web.Models.CreateRule
 
 @{
-    ViewBag.Title = "Create Annotation";
+    ViewBag.Title = "Create Rule";
 }
 
 @section head{
@@ -15,19 +15,45 @@
 
         <div class="btn-group">
             <button class="btn btn-warning reset">Reset</button>
-            <button class="btn btn-default" disabled>Get:</button>
+            <!--<button class="btn btn-default" disabled>Generate:</button>-->
+            <button class="btn btn-primary parse-sql" data-stmt="false"> Generate Rule</button>
+            <!--
             <button class="btn btn-primary parse-json">JSON</button>
             <button class="btn btn-primary parse-sql" data-stmt="false">SQL</button>
             <button class="btn btn-primary parse-sql" data-stmt="question_mark">SQL statement</button>
             <button class="btn btn-primary parse-mongo">MongoDB</button>
+            -->
         </div>
 
         <div id="result" class="hide">
             <h3>Output</h3>
             <pre></pre>
             <div>
-                @using (Html.BeginForm("Create", "Annotation", FormMethod.Post))
+                @using (Html.BeginForm("Create", "Rule", FormMethod.Post))
                 {
+                    <input type="hidden" name="Query" id="RuleValue" />
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Name, new {@class = "col-md-2 control-label"})
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Name, new {@class = "form-control"})
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Description, new {@class = "col-md-2 control-label"})
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Description, new {@class = "form-control"})
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Panel, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Panel, new { @class = "form-control" })
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         @Html.LabelFor(m => m.SelectedAnnotationType, new {@class = "col-md-2 control-label"})
                         <div class="col-md-10">

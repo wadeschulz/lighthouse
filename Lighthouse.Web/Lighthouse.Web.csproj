@@ -178,14 +178,14 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AnnotationController.cs" />
+    <Compile Include="Controllers\RuleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AnnotationModels.cs" />
+    <Compile Include="Models\RuleModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1056,7 +1056,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Annotation\Create.cshtml" />
+    <Content Include="Views\Rule\Create.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -1306,7 +1306,7 @@
     <Content Include="Scripts\jQueryBuilder\dist\scss\plugins\filter-description.scss" />
     <Content Include="Scripts\jQueryBuilder\dist\scss\plugins\invert.scss" />
     <Content Include="Scripts\jQueryBuilder\dist\scss\plugins\sortable.scss" />
-    <Content Include="Views\Annotation\Index.cshtml" />
+    <Content Include="Views\Rule\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

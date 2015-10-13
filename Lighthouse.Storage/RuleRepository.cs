@@ -13,7 +13,8 @@ namespace Lighthouse.Storage
         AnnotationRule Create(AnnotationRule rule);
         AnnotationRule Find(long id);
         AnnotationRule UpdateRule(long ruleId, string annotation, string query, string description);
-        IList<AnnotationRule> FindByPanel(string panel); 
+        IList<AnnotationRule> FindByPanel(string panel);
+        IQueryable<AnnotationRule> FindAll();
         int Count();
         void ValidateRule(long ruleId);
         void ArchiveRule(long ruleId);
@@ -32,6 +33,11 @@ namespace Lighthouse.Storage
         {
             panel = panel.ToLower();
             return _db.AnnotationRules.Where(r => r.Panel.Equals(panel) && r.IsValidated && !r.IsArchived).ToList();
+        }
+
+        public IQueryable<AnnotationRule> FindAll()
+        {
+            return _db.AnnotationRules;
         }
 
         public int Count()

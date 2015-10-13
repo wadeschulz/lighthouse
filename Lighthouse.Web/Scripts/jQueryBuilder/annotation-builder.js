@@ -228,6 +228,7 @@ $('.parse-sql').on('click', function () {
         .find('pre').html(
             res.sql + (res.params ? '\n\n' + JSON.stringify(res.params, undefined, 2) : '')
         );
+    $('#RuleValue').val(res.sql + (res.params ? '\n\n' + JSON.stringify(res.params, undefined, 2) : ''));
 });
 
 $('.parse-mongo').on('click', function () {

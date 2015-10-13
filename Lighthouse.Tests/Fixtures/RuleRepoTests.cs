@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
 using Lighthouse.Storage;
@@ -298,6 +299,44 @@ namespace Lighthouse.Tests.Fixtures
 
             Assert.AreEqual(count-1, rules.Count);
             Assert.IsFalse(rules.Any(r => r.Id == created.Id));
+        }
+
+        [Test]
+        public void FindAllLocatesAllRules()
+        {
+            const string annotation = "ASXL1 gene mutations are associated with...";
+            const string annType = "case";
+            const string description = "Presence of mutation in ASXL1";
+            const string name = "ASXL1 Positive";
+            const string panel = "yale/amlmds";
+            const string query = "WHERE GENE = 'ASXL1'";
+
+            var valid = new AnnotationRule()
+            {
+                Annotation = annotation,
+                AnnotationType = annType,
+                Description = description,
+                Name = name,
+                Panel = panel,
+                Query = query
+            };
+
+            var rules = _rules.FindAll();
+            var initialCount = rules.Count();
+            
+            var created = _rules.Create(valid);
+            _rules.ValidateRule(created.Id);
+
+            rules = _rules.FindAll();
+            var countAdded = rules.Count();
+            Assert.IsTrue(rules.Any(r => r.Id == created.Id));
+            Assert.AreEqual(initialCount+1, countAdded);
+
+            _rules.ArchiveRule(created.Id);
+            rules = _rules.FindAll();
+
+            Assert.AreEqual(initialCount+1, rules.Count());
+            Assert.IsTrue(rules.Any(r => r.Id == created.Id));
         }
 
         [Test]

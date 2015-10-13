@@ -4,14 +4,27 @@ using System.Web.Mvc;
 
 namespace Lighthouse.Web.Models
 {
-    public class CreateAnnotation
+    public class CreateRule
     {
-        public string Rules { get; set; }
         public List<SelectListItem> AvailableAnnotationTypes { get; set; }
 
         [Required]
+        [Display(Name = "Rule Name")]
+        public string Name { get; set; }
+
+        [Required]
+        [Display(Name = "Rule Description")]
+        public string Description { get; set; }
+
+        [Required]
+        [Display(Name = "Panel")]
+        public string Panel { get; set; }
+
+        public string Query { get; set; }
+
+        [Required]
         [Display(Name = "Annotation Type")]
-        public int SelectedAnnotationType { get; set; }
+        public string SelectedAnnotationType { get; set; }
 
         [Required]
         [Display(Name = "Annotation")]
