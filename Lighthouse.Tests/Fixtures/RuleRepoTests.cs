@@ -171,9 +171,7 @@ namespace Lighthouse.Tests.Fixtures
             const string name = "ASXL1 Positive";
             const string panel = "yale/amlmds";
             const string query = "WHERE GENE = 'ASXL1'";
-
-            // Create new rule, set validated=true to verify that create method sets to false (can only validate through Validate())
-            // Created date should also be set by method, not calling function, so verify that date differs
+            
             var valid = new AnnotationRule()
             {
                 Annotation = annotation,
@@ -203,9 +201,7 @@ namespace Lighthouse.Tests.Fixtures
             const string name = "ASXL1 Positive";
             const string panel = "yale/amlmds";
             const string query = "WHERE GENE = 'ASXL1'";
-
-            // Create new rule, set validated=true to verify that create method sets to false (can only validate through Validate())
-            // Created date should also be set by method, not calling function, so verify that date differs
+            
             var valid = new AnnotationRule()
             {
                 Annotation = annotation,
@@ -235,9 +231,7 @@ namespace Lighthouse.Tests.Fixtures
             const string name = "ASXL1 Positive";
             const string panel = "yale/amlmds";
             const string query = "WHERE GENE = 'ASXL1'";
-
-            // Create new rule, set validated=true to verify that create method sets to false (can only validate through Validate())
-            // Created date should also be set by method, not calling function, so verify that date differs
+            
             var valid = new AnnotationRule()
             {
                 Annotation = annotation,
@@ -261,6 +255,18 @@ namespace Lighthouse.Tests.Fixtures
         }
 
         [Test]
+        public void ArchiveValidateExceptWhenNull()
+        {
+            long id = 0;
+            var lastRule = _db.AnnotationRules.OrderByDescending(r => r.Id).FirstOrDefault();
+            if (lastRule != null && lastRule.Id > id)
+                id = lastRule.Id + 1;
+
+            Assert.Throws(typeof (Exception), delegate { _rules.ArchiveRule(id); });
+            Assert.Throws(typeof(Exception), delegate { _rules.ValidateRule(id); });
+        }
+
+        [Test]
         public void ArchivedTestCannotBeListed()
         {
             const string annotation = "ASXL1 gene mutations are associated with...";
@@ -269,9 +275,7 @@ namespace Lighthouse.Tests.Fixtures
             const string name = "ASXL1 Positive";
             const string panel = "yale/amlmds";
             const string query = "WHERE GENE = 'ASXL1'";
-
-            // Create new rule, set validated=true to verify that create method sets to false (can only validate through Validate())
-            // Created date should also be set by method, not calling function, so verify that date differs
+            
             var valid = new AnnotationRule()
             {
                 Annotation = annotation,
@@ -294,6 +298,107 @@ namespace Lighthouse.Tests.Fixtures
 
             Assert.AreEqual(count-1, rules.Count);
             Assert.IsFalse(rules.Any(r => r.Id == created.Id));
+        }
+
+        [Test]
+        public void CanUpdateRule()
+        {
+            const string annotation = "ASXL1 gene mutations are associated with...";
+            const string annType = "case";
+            const string description = "Presence of mutation in ASXL1";
+            const string name = "ASXL1 Positive";
+            const string panel = "yale/amlmds";
+            const string query = "WHERE GENE = 'ASXL1'";
+
+            var valid = new AnnotationRule()
+            {
+                Annotation = annotation,
+                AnnotationType = annType,
+                Description = description,
+                Name = name,
+                Panel = panel,
+                Query = query
+            };
+
+            var created = _rules.Create(valid);
+            
+            const string uAnn = "ASXL1 gene variants are assocaited with";
+            const string uQuery = "WHERE GENE = 'ASXL1' AND AF > 5";
+            const string uDesc = "ASXL1 variant >5% AF";
+
+            Assert.Throws(typeof (Exception), delegate { _rules.UpdateRule(created.Id + 1, null, null, null); });
+
+            _rules.UpdateRule(created.Id, uAnn, uQuery, uDesc);
+            var updated = _rules.Find(created.Id);
+            Assert.AreEqual(uAnn, updated.Annotation);
+            Assert.AreEqual(uQuery, updated.Query);
+            Assert.AreEqual(uDesc, updated.Description);
+
+            _rules.UpdateRule(created.Id, null, null, null);
+            var nullUpdate = _rules.Find(created.Id);
+            Assert.AreEqual(uAnn, nullUpdate.Annotation);
+            Assert.AreEqual(uQuery, nullUpdate.Query);
+            Assert.AreEqual(uDesc, nullUpdate.Description);
+        }
+
+        [Test]
+        public void CannotUpdateValidatedRule()
+        {
+            const string annotation = "ASXL1 gene mutations are associated with...";
+            const string annType = "case";
+            const string description = "Presence of mutation in ASXL1";
+            const string name = "ASXL1 Positive";
+            const string panel = "yale/amlmds";
+            const string query = "WHERE GENE = 'ASXL1'";
+
+            var valid = new AnnotationRule()
+            {
+                Annotation = annotation,
+                AnnotationType = annType,
+                Description = description,
+                Name = name,
+                Panel = panel,
+                Query = query
+            };
+
+            var created = _rules.Create(valid);
+            _rules.ValidateRule(created.Id);
+
+            const string uAnn = "ASXL1 gene variants are assocaited with";
+            const string uQuery = "WHERE GENE = 'ASXL1' AND AF > 5";
+            const string uDesc = "ASXL1 variant >5% AF";
+
+            Assert.Throws(typeof(Exception), delegate { _rules.UpdateRule(created.Id, uAnn, uQuery, uDesc); });
+        }
+
+        [Test]
+        public void CannotUpdateArchivedRule()
+        {
+            const string annotation = "ASXL1 gene mutations are associated with...";
+            const string annType = "case";
+            const string description = "Presence of mutation in ASXL1";
+            const string name = "ASXL1 Positive";
+            const string panel = "yale/amlmds";
+            const string query = "WHERE GENE = 'ASXL1'";
+
+            var valid = new AnnotationRule()
+            {
+                Annotation = annotation,
+                AnnotationType = annType,
+                Description = description,
+                Name = name,
+                Panel = panel,
+                Query = query
+            };
+
+            var created = _rules.Create(valid);
+            _rules.ArchiveRule(created.Id);
+
+            const string uAnn = "ASXL1 gene variants are assocaited with";
+            const string uQuery = "WHERE GENE = 'ASXL1' AND AF > 5";
+            const string uDesc = "ASXL1 variant >5% AF";
+
+            Assert.Throws(typeof(Exception), delegate { _rules.UpdateRule(created.Id, uAnn, uQuery, uDesc); });
         }
     }
 }

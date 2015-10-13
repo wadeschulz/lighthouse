@@ -12,6 +12,7 @@ namespace Lighthouse.Storage
     {
         AnnotationRule Create(AnnotationRule rule);
         AnnotationRule Find(long id);
+        AnnotationRule UpdateRule(long ruleId, string annotation, string query, string description);
         IList<AnnotationRule> FindByPanel(string panel); 
         int Count();
         void ValidateRule(long ruleId);
@@ -96,6 +97,9 @@ namespace Lighthouse.Storage
 
             if(rule.IsValidated)
                 throw new Exception("Rule is validated and cannot be updated.");
+
+            if (rule.IsArchived)
+                throw new Exception("Rule is archived and cannot be updated.");
 
             if (!string.IsNullOrEmpty(annotation))
             {
