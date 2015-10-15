@@ -1327,6 +1327,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Lighthouse.Evaluator\Lighthouse.Evaluator.csproj">
+      <Project>{E316D01A-A6C9-486E-A48E-48230DB1177E}</Project>
+      <Name>Lighthouse.Evaluator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lighthouse.Storage\Lighthouse.Storage.csproj">
       <Project>{D5A71B91-1981-4727-89BD-B4D8547990EE}</Project>
       <Name>Lighthouse.Storage</Name>
