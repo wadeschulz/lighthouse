@@ -75,8 +75,8 @@
             size: 10,
             validation: {
                 min: 0,
-                step: 0.5,
-                max: 100
+                step: 0.01,
+                max: 1
             }
         },
         {
