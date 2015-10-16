@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lighthouse.Web", "Lighthous
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lighthouse.Storage", "Lighthouse.Storage\Lighthouse.Storage.csproj", "{D5A71B91-1981-4727-89BD-B4D8547990EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lighthouse.Evaluator", "Lighthouse.Evaluator\Lighthouse.Evaluator.csproj", "{E316D01A-A6C9-486E-A48E-48230DB1177E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lighthouse.Annotate", "Lighthouse.Evaluator\Lighthouse.Annotate.csproj", "{E316D01A-A6C9-486E-A48E-48230DB1177E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lighthouse.Tests", "Lighthouse.Tests\Lighthouse.Tests.csproj", "{D54044FC-8096-475A-AC5D-B59D34417935}"
 EndProject

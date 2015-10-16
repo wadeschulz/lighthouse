@@ -4,13 +4,26 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Lighthouse.Evaluator.Parsers;
+using Lighthouse.Annotate;
+using Lighthouse.Annotate.Models;
+using Lighthouse.Annotate.Parsers;
+using Lighthouse.Storage;
+using Lighthouse.Storage.Models;
 using Lighthouse.Web.Models;
+using Newtonsoft.Json;
 
 namespace Lighthouse.Web.Controllers
 {
     public class AnnotationController : Controller
     {
+        private readonly IVariantRepository _variants;
+
+        public AnnotationController()
+        {
+            var db = new LighthouseContext();
+            _variants = new VariantRepository(db);
+        }
+
         // GET: Annotate
         public ActionResult Create()
         {
@@ -21,30 +34,53 @@ namespace Lighthouse.Web.Controllers
         public ActionResult Create(CreateAnnotationModel model)
         {
             var guid = Guid.NewGuid().ToString("N");
-            var tempPath = Server.MapPath("~/App_Data/guid");
+            var tempPath = Server.MapPath("~/App_Data/" + guid);
             model.VcfFile.SaveAs(tempPath);
 
             var parser = new IonReporterParser();
-            IList<Lighthouse.Evaluator.Models.VariantModel> variants;
+            IList<VariantModel> variants;
             using (var sr = new StreamReader(tempPath))
             {
                 variants = parser.ParseVariants(sr);
             }
 
+            var variantList = new List<Variant>();
+
             foreach (var variant in variants)
             {
-                // TODO: add each variant to database
+                foreach (var effect in variant.AlternateAlleles)
+                {
+                    var variantEntry = new Variant()
+                    {
+                        CaseId = model.CaseId,
+                        CaseGuid = guid,
+                        Panel = model.Panel,
+                        Chromosome = variant.Chromosome,
+                        Location = variant.Location,
+                        ReferenceAllele = variant.ReferenceAllele,
+                        ReadDepth = variant.TotalReads,
+                        AlternateAllele = effect.AlternateAllele,
+                        AlternateAlleleReads = effect.AlleleReads,
+                        AllelicFrequency = effect.AlleleFrequency,
+                        CodingHgvs = effect.VariantFunction.HgvsCoding,
+                        ProteinHgvs = effect.VariantFunction.HgvsProtein,
+                        Region = effect.VariantFunction.Location,
+                        Effect = effect.VariantFunction.Function,
+                        Gene = effect.VariantFunction.Gene
+                    };
+
+                    variantList.Add(variantEntry);
+                }
             }
 
-            // TODO: load rules for submitted panel
+            _variants.Create(variantList);
+            
+            var result = Annotator.Annotate(model.CaseId, guid, model.Panel);
 
-            // TODO: generate annotations for VCF file
+            _variants.Delete(guid);
+            System.IO.File.Delete(tempPath);
 
-            // TODO: cleanup variants from DB and file from disk
-
-            // TODO: return JSON response of variant annotations
-
-            return View();
+            return new JsonResult {ContentType = "application/json", Data = JsonConvert.SerializeObject(result)};
         }
     }
 }

@@ -7,8 +7,8 @@
     <ProjectGuid>{E316D01A-A6C9-486E-A48E-48230DB1177E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lighthouse.Evaluator</RootNamespace>
-    <AssemblyName>Lighthouse.Evaluator</AssemblyName>
+    <RootNamespace>Lighthouse.Annotate</RootNamespace>
+    <AssemblyName>Lighthouse.Annotate</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,11 +34,20 @@
       <HintPath>..\packages\CsvHelper.2.13.0.0\lib\net40-client\CsvHelper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,6 +61,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Annotator.cs" />
+    <Compile Include="Models\AnnotationModel.cs" />
     <Compile Include="Models\VariantModel.cs" />
     <Compile Include="Parsers\IonReporterParser.cs" />
     <Compile Include="Parsers\IParser.cs" />
@@ -60,6 +71,12 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lighthouse.Storage\Lighthouse.Storage.csproj">
+      <Project>{D5A71B91-1981-4727-89BD-B4D8547990EE}</Project>
+      <Name>Lighthouse.Storage</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Lighthouse.Evaluator.Models;
+using Lighthouse.Annotate.Models;
 using Newtonsoft.Json;
 using VarBase.Binf.NextGenParser.Models.IonReporter;
 using VarBase.Binf.NextGenParser.Models.VariantCallFormat;
 using VarBase.Binf.NextGenParser.Parsers;
 
-namespace Lighthouse.Evaluator.Parsers
+namespace Lighthouse.Annotate.Parsers
 {
     public class IonReporterParser : IParser
     {

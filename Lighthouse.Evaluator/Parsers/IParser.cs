@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Lighthouse.Annotate.Models;
 
-namespace Lighthouse.Evaluator.Parsers
+namespace Lighthouse.Annotate.Parsers
 {
     public interface IParser
     {
-        IList<Lighthouse.Evaluator.Models.VariantModel> ParseVariants(StreamReader vcfFile);
+        IList<VariantModel> ParseVariants(StreamReader vcfFile);
     }
 }

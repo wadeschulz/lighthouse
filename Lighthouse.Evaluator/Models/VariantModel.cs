@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using VarBase.Binf.NextGenParser.Models.IonReporter;
 
-namespace Lighthouse.Evaluator.Models
+namespace Lighthouse.Annotate.Models
 {
     public class VariantModel
     {
@@ -23,6 +19,6 @@ namespace Lighthouse.Evaluator.Models
         public string AlternateAllele { get; set; }
         public int AlleleReads { get; set;}
         public double AlleleFrequency { get; set; }
-        public VcfVariantFunction VariantFunction { get; set; }
+        public VcfVariantFunction VariantFunction { get; set; } 
     }
 }
