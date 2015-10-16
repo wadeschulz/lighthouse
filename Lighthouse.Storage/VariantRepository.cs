@@ -60,7 +60,7 @@ namespace Lighthouse.Storage
 
         public IList<Variant> Query(string guid, string query)
         {
-            var result = _db.Variants.SqlQuery(string.Format("SELECT Id FROM dbo.Variants WHERE guid = {0} AND ({1})", guid, query));
+            var result = _db.Variants.SqlQuery(string.Format("SELECT * FROM dbo.Variants WHERE CaseGuid = '{0}' AND ({1})", guid, query));
 
             return result.ToList();
         }

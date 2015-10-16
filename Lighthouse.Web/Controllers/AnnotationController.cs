@@ -48,29 +48,24 @@ namespace Lighthouse.Web.Controllers
 
             foreach (var variant in variants)
             {
-                foreach (var effect in variant.AlternateAlleles)
+                variantList.AddRange(variant.AlternateAlleles.Select(effect => new Variant()
                 {
-                    var variantEntry = new Variant()
-                    {
-                        CaseId = model.CaseId,
-                        CaseGuid = guid,
-                        Panel = model.Panel,
-                        Chromosome = variant.Chromosome,
-                        Location = variant.Location,
-                        ReferenceAllele = variant.ReferenceAllele,
-                        ReadDepth = variant.TotalReads,
-                        AlternateAllele = effect.AlternateAllele,
-                        AlternateAlleleReads = effect.AlleleReads,
-                        AllelicFrequency = effect.AlleleFrequency,
-                        CodingHgvs = effect.VariantFunction.HgvsCoding,
-                        ProteinHgvs = effect.VariantFunction.HgvsProtein,
-                        Region = effect.VariantFunction.Location,
-                        Effect = effect.VariantFunction.Function,
-                        Gene = effect.VariantFunction.Gene
-                    };
-
-                    variantList.Add(variantEntry);
-                }
+                    CaseId = model.CaseId,
+                    CaseGuid = guid,
+                    Panel = model.Panel,
+                    Chromosome = variant.Chromosome,
+                    Location = variant.Location,
+                    ReferenceAllele = variant.ReferenceAllele,
+                    ReadDepth = variant.TotalReads,
+                    AlternateAllele = effect.AlternateAllele,
+                    AlternateAlleleReads = effect.AlleleReads,
+                    AllelicFrequency = effect.AlleleFrequency,
+                    CodingHgvs = effect.VariantFunction.HgvsCoding,
+                    ProteinHgvs = effect.VariantFunction.HgvsProtein,
+                    Region = effect.VariantFunction.Location, // exonic, intronic, etc
+                    Effect = effect.VariantFunction.Function, // synonymous, missense, etc
+                    Gene = effect.VariantFunction.Gene
+                }));
             }
 
             _variants.Create(variantList);

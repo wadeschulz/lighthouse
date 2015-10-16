@@ -24,7 +24,7 @@
         * Gene Name
         */
         {
-            id: 'gene',
+            id: 'Gene',
             label: 'Gene',
             type: 'string',
             input: 'select',
@@ -69,7 +69,7 @@
             }
         },
         {
-            id: 'af',
+            id: 'AllelicFrequency',
             label: 'Allelic Frequency',
             type: 'double',
             size: 10,
@@ -80,20 +80,20 @@
             }
         },
         {
-            id: 'chr',
+            id: 'Chromosome',
             label: 'Chromosome',
             operators: ['equal', 'not_equal', 'is_null', 'is_not_null'],
             type: 'string',
             size: 5
         },
         {
-            id: 'loc',
+            id: 'Location',
             label: 'Genomic Location',
             type: 'integer',
             size: 10
         },
         {
-            id: 'region',
+            id: 'Region',
             label: 'Genomic Region',
             type: 'string',
             input: 'select',
@@ -120,7 +120,7 @@
             }
         },
         {
-            id: 'vartype',
+            id: 'VariantType',
             label: 'Variant Type',
             type: 'string',
             input: 'select',
@@ -143,7 +143,7 @@
             }
         },
         {
-            id: 'vareffect',
+            id: 'Effect',
             label: 'Variant Effect',
             type: 'string',
             input: 'select',

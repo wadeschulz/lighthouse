@@ -15,7 +15,16 @@ namespace Lighthouse.Storage
     {
         protected override void Seed(LighthouseContext context)
         {
-            var columns = new List<string> {"caseguid", "chr", "loc", "chgvs", "phgvs", "effect", "region"};
+            var columns = new List<string>
+            {
+                "CaseGuid",
+                "Chromosome",
+                "Location",
+                "CodingHgvs",
+                "ProteinHgvs",
+                "Effect",
+                "Region"
+            };
 
             foreach (var column in columns)
             {
