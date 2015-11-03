@@ -64,6 +64,7 @@ namespace Lighthouse.Web.Controllers
                     ProteinHgvs = effect.VariantFunction.HgvsProtein,
                     Region = effect.VariantFunction.Location, // exonic, intronic, etc
                     Effect = effect.VariantFunction.Function, // synonymous, missense, etc
+                    //VariantType = effect.VariantFunction., // indel, snp, etc
                     Gene = effect.VariantFunction.Gene
                 }));
             }

@@ -31,9 +31,11 @@ namespace Lighthouse.Web.Controllers
         {
             var variantAnnotation = new SelectListItem() { Text = "Variant", Value = "variant" };
             var caseAnnotation = new SelectListItem() { Text = "Case", Value = "case" };
+            var bpaAnnotation = new SelectListItem() { Text = "Best Practice Alert", Value = "bpa" };
+
             var model = new CreateRule()
             {
-                AvailableAnnotationTypes = new List<SelectListItem>() { variantAnnotation, caseAnnotation }
+                AvailableAnnotationTypes = new List<SelectListItem>() { variantAnnotation, caseAnnotation, bpaAnnotation }
             };
 
             return View(model);

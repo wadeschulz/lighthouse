@@ -8,7 +8,7 @@ ADD /dist/ /lighthouse/
 WORKDIR lighthouse
 
 # fetch the NuGet dependencies for our application
-RUN kpm restore
+RUN dnu restore
 
 # set the working directory for subsequent commands
 # expose TCP port 5004 from container
@@ -18,4 +18,4 @@ EXPOSE 5004
 # When the image starts it will execute the "k web" command
 # effectively starting our web application
 # (listening on port 5004 by default)
-ENTRYPOINT ["k", "kestrel"]
+ENTRYPOINT ["dnx", "kestrel"]
