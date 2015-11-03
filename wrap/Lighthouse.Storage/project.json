@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net451": {
+      "wrappedProject": "../../Lighthouse.Storage/Lighthouse.Storage.csproj",
+      "bin": {
+        "assembly": "../../Lighthouse.Storage/obj/{configuration}/Lighthouse.Storage.dll",
+        "pdb": "../../Lighthouse.Storage/obj/{configuration}/Lighthouse.Storage.pdb"
+      },
+      "dependencies": {
+        "EntityFramework": "6.1.3"
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net451": {
+      "wrappedProject": "../../Lighthouse.Evaluator/Lighthouse.Annotate.csproj",
+      "bin": {
+        "assembly": "../../Lighthouse.Evaluator/obj/{configuration}/Lighthouse.Annotate.dll",
+        "pdb": "../../Lighthouse.Evaluator/obj/{configuration}/Lighthouse.Annotate.pdb"
+      },
+      "dependencies": {
+        "CsvHelper": "2.13.0.0",
+        "EntityFramework": "6.1.3",
+        "Newtonsoft.Json": "6.0.4",
+        "VarBase.Binf.NextGenParser": "0.27",
+        "Lighthouse.Storage": "1.0.0-*"
+      }
+    }
+  }
+}
